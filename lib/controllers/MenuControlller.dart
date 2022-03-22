@@ -8,18 +8,28 @@ class MenuController extends GetxController{
   static MenuController instance  = Get.find();
   var activeItem = OverviewPageRoute.obs;
   var hoverItem = "".obs;
+  var i = 0.obs;
+
+  increment(){
+    i ++;
+    update();
+  }
 
   changeActiveItemTo(String itemName){
     activeItem.value = itemName;
+    update();
   }
 
   onHover(String itemName){
-    if(!isActive(itemName)) hoverItem.value = itemName;
+    if(!isActive(itemName)) {
+      hoverItem.value = itemName;
+      update();
+    }
   }
 
-  isActive(String itemName) => activeItem.value = itemName;
+  isActive(String itemName) => activeItem.value == itemName;
 
-  isHovering(String itemName) => hoverItem.value = itemName;
+  isHovering(String itemName) => hoverItem.value == itemName;
 
   Widget returnIconFor(String itemName){
     switch (itemName){

@@ -1,3 +1,4 @@
+import 'package:dasboard/widgets/SideMenu.dart';
 import 'package:flutter/material.dart';
 
 
@@ -9,9 +10,7 @@ class LargeScreen extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: Container(
-            color: Colors.red,
-          ),
+          child: SideMenu(),
         ),
         Expanded(
           flex: 5,

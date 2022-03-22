@@ -1,5 +1,6 @@
 import 'package:dasboard/helpers/ResponsiveWidget.dart';
 import 'package:dasboard/widgets/LargeScreen.dart';
+import 'package:dasboard/widgets/SideMenu.dart';
 import 'package:dasboard/widgets/SmallScreen.dart';
 import 'package:dasboard/widgets/MediumScreen.dart';
 import 'package:dasboard/widgets/topNav.dart';
@@ -14,7 +15,9 @@ class SiteLayout extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       appBar: topNavigationBar(context, scaffoldKey),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: SideMenu(),
+      ),
       body: ResponsiveWidget(
         largeScreen: LargeScreen(),
         mediumScreen: MediumScreen(),
